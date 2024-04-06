@@ -1,11 +1,17 @@
 "use client"
 import { useState, useEffect } from 'react';
 
-const TodayCountdown: React.FC = () => {
+const TodayCountdown = () => {
   const [remainingTime, setRemainingTime] = useState<number>(calculateRemainingTime());
+  const [isLate, setIsLate] = useState<boolean>(false);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
+      const now = new Date();
+      if (now.getHours() >= 22) { // 如果当前时间晚于 22 点（超过了 10 点）
+        setIsLate(true);
+      }
       setRemainingTime(calculateRemainingTime());
     }, 1000);
 
@@ -30,8 +36,10 @@ const TodayCountdown: React.FC = () => {
   return (
     <div className="text-center mt-8">
       <h1 className="text-3xl font-bold mb-4">今日剩余时间</h1>
-      <div className="text-2xl">{formatTime(remainingTime)}</div>
+      <div className={`text-4xl font-medium ${isLate ? 'text-red-600' : ''}`}>{formatTime(remainingTime)}</div>
     </div>
+
+    
   );
 };
 

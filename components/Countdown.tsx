@@ -29,7 +29,7 @@ const Countdown = () => {
   return (
     <div className="text-center dark:text-white">
       <p className="text-4xl mb-4">
-        <span className="text-green-600 font-bold">{timeLeft.days}</span> days{' '}
+        <span className="text-green-500 font-bold text-6xl">{timeLeft.days}</span> days{' '}
         <span className="text-green-600 font-bold">{timeLeft.hours}</span> hours{' '}
         <span className="text-green-600 font-bold">{timeLeft.minutes}</span> minutes{' '}
         <span className="text-green-600 font-bold">{timeLeft.seconds}</span> seconds
