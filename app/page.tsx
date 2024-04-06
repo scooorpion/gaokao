@@ -2,6 +2,7 @@
 import Clock from '../components/Clock';
 import Countdown from '../components/Countdown';
 import ProgressBar from '../components/ProgressBar';
+import TodayCountdown from '../components/TodayCountdown';
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Clock />
       <Countdown />
       <ProgressBar />
+      <TodayCountdown />
     </div>
   );
 };
