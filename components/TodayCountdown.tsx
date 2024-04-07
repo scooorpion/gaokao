@@ -21,7 +21,7 @@ const TodayCountdown = () => {
   function calculateRemainingTime(): number {
     const now = new Date();
     const endOfDay = new Date(now);
-    endOfDay.setHours(21, 59, 59, 999); // 设置今天结束时间为23:59:59
+    endOfDay.setHours(23, 59, 59, 999); // 设置今天结束时间为23:59:59
     const difference = endOfDay.getTime() - now.getTime();
     return difference > 0 ? difference : 0;
   }
@@ -35,8 +35,11 @@ const TodayCountdown = () => {
 
   return (
     <div className="text-center mt-8">
-      <h1 className="text-3xl font-bold mb-4">十点休息，剩余时间</h1>
-      <div className={`text-4xl font-medium ${isLate ? 'text-red-600' : ''}`}>{formatTime(remainingTime)}</div>
+      <h1 className="text-3xl font-bold mb-4">今日剩余时间</h1>
+      <div className={`text-4xl font-medium ${isLate ? 'text-red-600' : ''}`}>
+        {formatTime(remainingTime)}
+        {isLate && <div className='text-xl'>10点已过，注意休息</div>}
+      </div>
     </div>
 
     
