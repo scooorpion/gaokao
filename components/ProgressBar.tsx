@@ -3,8 +3,8 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 
 const ProgressBar = () => {
 
-  const startDateRef = useRef(new Date('2022-09-01T00:00:00'));
-  const endDateRef = useRef(new Date('2025-06-07T00:00:00'));
+  const startDateRef = useRef(new Date('2024-02-25T00:00:00'));
+  const endDateRef = useRef(new Date('2024-07-01T00:00:00'));
   const [progress, setProgress] = useState<number>(0);
 
   const calculateProgress = useCallback(() => {
@@ -29,10 +29,10 @@ const ProgressBar = () => {
     <div className="w-7/12 bg-gray-200 h-8 rounded-full overflow-hidden dark:text-white">
       
         <div
-        className="h-full bg-green-500"
+        className="h-full bg-green-600"
         style={{ width: `${progress}%`}}
-        
-      />
+        />
+
     </div>
 
   );
