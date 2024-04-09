@@ -16,13 +16,16 @@ const Home = () => {
 
       <div className="flex flex-col items-center justify-center h-screen dark:bg-black">
         <OtherSchedule />
+        
         <Clock />
         <Countdown />
 
-        <ProgressBar/>
+        <ProgressBar startDate="2022-09-01T00:00:00" 
+          endDate="2025-06-07T00:00:00" label="高中" />
 
-        {/* <ProgressBar startDate="2024-02-25T00:00:00" 
-          endDate="2024-07-01T00:00:00" label="本学期剩余" /> */}
+        <ProgressBar startDate="2024-02-25T00:00:00" 
+          endDate="2024-07-01T00:00:00" label="高二下" />
+        
 
         <TodayCountdown />
       </div>
