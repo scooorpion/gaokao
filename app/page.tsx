@@ -18,10 +18,15 @@ const Home = () => {
         <OtherSchedule />
         <Clock />
         <Countdown />
-        <ProgressBar />
+
+        <ProgressBar/>
+
+        {/* <ProgressBar startDate="2024-02-25T00:00:00" 
+          endDate="2024-07-01T00:00:00" label="本学期剩余" /> */}
+
         <TodayCountdown />
       </div>
-      
+
     </div>
     
   );

@@ -2,7 +2,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 
 const ProgressBar = () => {
-
   const startDateRef = useRef(new Date('2024-02-25T00:00:00'));
   const endDateRef = useRef(new Date('2024-07-01T00:00:00'));
   const [progress, setProgress] = useState<number>(0);
@@ -26,15 +25,12 @@ const ProgressBar = () => {
   }, [calculateProgress]);
 
   return (
-    <div className="w-7/12 bg-gray-200 h-8 rounded-full overflow-hidden dark:text-white">
-      
-        <div
-        className="h-full bg-green-600"
-        style={{ width: `${progress}%`}}
-        />
-
+    <div className="w-7/12 bg-gray-200 h-8 rounded-full overflow-hidden dark:text-black relative">
+      <div className="h-full bg-green-600" style={{ width: `${progress}%` }} />
+      <span className="absolute inset-0 flex items-center justify-center w-full h-full">
+        本学期剩余：{`${Math.round(progress)}%`}
+      </span>
     </div>
-
   );
 };
 
