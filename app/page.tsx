@@ -23,8 +23,8 @@ const Home = () => {
         <ProgressBar startDate="2022-09-01T00:00:00" 
           endDate="2025-06-07T00:00:00" label="高中" />
 
-        <ProgressBar startDate="2024-02-25T00:00:00" 
-          endDate="2024-07-01T00:00:00" label="高二下" />
+        <ProgressBar startDate="2023-09-01T00:00:00" 
+          endDate="2024-07-01T00:00:00" label="高二" />
         
 
         <TodayCountdown />
