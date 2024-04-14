@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const OtherSchedule = () => {
   // 定义目标日期（2025年6月7日）
-  const targetDate = new Date('2024-04-14T00:00:00');
+  const targetDate = new Date('2024-04-23T00:00:00');
 
   // 计算当前日期与目标日期之间的差值
   const calculateTimeLeft = () => {
