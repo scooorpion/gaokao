@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const OtherSchedule = () => {
   // 定义目标日期（2025年6月7日）
-  const targetDate = new Date('2024-04-23T00:00:00');
+  const targetDate = new Date('2024-08-10T00:00:00');
 
   // 计算当前日期与目标日期之间的差值
   const calculateTimeLeft = () => {
@@ -29,7 +29,7 @@ const OtherSchedule = () => {
   return (
     <div className="text-center dark:text-white m-4">
       <p className="text-4xl mb-4">
-        <div className='text-3xl font-bold mt-4'>你的计划还剩</div>
+        <div className='text-3xl font-bold mt-4'>高三倒计时</div>
         <div className="text-green-600 font-bold text-6xl">{timeLeft.days} days{' '}</div> 
         <span className="text-green-600 font-bold">{timeLeft.hours}</span> hours{' '}
         <span className="text-green-600 font-bold">{timeLeft.minutes}</span> minutes{' '}
