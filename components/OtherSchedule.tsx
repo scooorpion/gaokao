@@ -28,11 +28,11 @@ const OtherSchedule: React.FC<OtherScheduleProps> = ({ targetDate, title }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const interval = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, [calculateTimeLeft]);
 
   return (
