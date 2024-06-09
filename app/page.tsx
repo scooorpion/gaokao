@@ -15,19 +15,21 @@ const Home = () => {
       </Head>
 
       <div className="flex flex-col items-center justify-center h-screen dark:bg-black">
-        <OtherSchedule />
+        <OtherSchedule targetDate="2024-07-06T00:00:00" title="高二下期末考" />
+
+        <OtherSchedule targetDate="2024-09-01T00:00:00" title="距离高三正式开学" />
+
+        <OtherSchedule targetDate="2025-02-27T00:00:00" title="高考倒计时100天" />
         
-        <Clock />
-        <Countdown />
+        {/* <Clock /> */}
+        {/* <Countdown /> */}
 
         <ProgressBar startDate="2022-09-01T00:00:00" 
           endDate="2025-06-07T00:00:00" label="高中" />
 
-        <ProgressBar startDate="2023-09-01T00:00:00" 
-          endDate="2024-06-07T00:00:00" label="高二" />
         
 
-        <TodayCountdown />
+        {/* <TodayCountdown /> */}
       </div>
 
     </div>

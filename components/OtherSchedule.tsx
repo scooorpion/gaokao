@@ -1,22 +1,31 @@
-"use client"
-import { useState, useEffect } from 'react';
+"use client";
+import { useState, useEffect, useCallback } from 'react';
 
-const OtherSchedule = () => {
-  // 定义目标日期（2025年6月7日）
-  const targetDate = new Date('2024-07-05T00:00:00');
+interface OtherScheduleProps {
+  targetDate: string;
+  title: string;
+}
 
-  // 计算当前日期与目标日期之间的差值
-  const calculateTimeLeft = () => {
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+const OtherSchedule: React.FC<OtherScheduleProps> = ({ targetDate, title }) => {
+  const calculateTimeLeft = useCallback((): TimeLeft => {
     const now = new Date();
-    const difference = targetDate.getTime() - now.getTime();
+    const target = new Date(targetDate); // 将 targetDate 转换为 Date 对象
+    const difference = target.getTime() - now.getTime();
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
     const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
     return { days, hours, minutes, seconds };
-  };
+  }, [targetDate]);
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,12 +33,12 @@ const OtherSchedule = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
-  });
+  }, [calculateTimeLeft]);
 
   return (
     <div className="text-center dark:text-white m-4">
       <p className="text-4xl mb-4">
-        <div className='text-3xl font-bold mt-4'>一轮复习结束，期末考</div>
+        <div className='text-3xl font-bold mt-4'>{title}</div>
         <div className="text-green-600 font-bold text-6xl">{timeLeft.days} days{' '}</div> 
         <span className="text-green-600 font-bold">{timeLeft.hours}</span> hours{' '}
         <span className="text-green-600 font-bold">{timeLeft.minutes}</span> minutes{' '}
