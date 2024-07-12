@@ -15,7 +15,7 @@ const Home = () => {
       </Head>
 
       <div className="flex flex-col items-center justify-center h-screen dark:bg-black">
-        <OtherSchedule targetDate="2024-08-014T00:00:00" title="暑假第一二阶段结束" />
+        <OtherSchedule targetDate="2024-08-14T00:00:00" title="暑假第一二阶段结束" />
 
         <OtherSchedule targetDate="2024-09-01T00:00:00" title="距离高三正式开学" />
 
