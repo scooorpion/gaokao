@@ -38,7 +38,7 @@ const OtherSchedule: React.FC<OtherScheduleProps> = ({ targetDate, title }) => {
   return (
     <div className="text-center dark:text-white m-4">
       <p className="text-4xl mb-4">
-        <div className='text-3xl font-bold mt-4 pb-5'>{title}</div>
+        <div className='text-3xl font-bold mt-4'>{title}</div>
         <div className="text-green-600 font-bold text-6xl">{timeLeft.days} days{' '}</div> 
         <span className="text-green-600 font-bold">{timeLeft.hours}</span> hours{' '}
         <span className="text-green-600 font-bold">{timeLeft.minutes}</span> minutes{' '}
