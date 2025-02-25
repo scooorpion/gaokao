@@ -20,7 +20,7 @@ const Home = () => {
         {/* <OtherSchedule targetDate="2024-09-01T00:00:00" title="距离高三正式开学" /> */}
 
         {/* <OtherSchedule targetDate="2025-02-27T00:00:00" title="高考" /> */}
-        <OtherSchedule targetDate="2025-06-07T00:00:00" title="日拱一卒" />
+        <OtherSchedule targetDate="2025-06-07T00:00:00" title="" />
 
         
         {/* <Clock /> */}
